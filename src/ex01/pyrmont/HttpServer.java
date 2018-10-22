@@ -17,6 +17,7 @@ public class HttpServer {
      */
     public static final String WEB_ROOT =
             System.getProperty("user.dir") + File.separator + "webroot";
+    private static final String SHUT_DOWN = "/SHUTDOWN";
     private boolean shutdown = false;
 
     public static void main(String[] args) {
@@ -40,10 +41,19 @@ public class HttpServer {
             OutputStream outputStream = null;
 
             try {
-                socket = new Socket();
+                socket = serverSocket.accept();
                 inputStream = socket.getInputStream();
                 outputStream = socket.getOutputStream();
 
+                Request request = new Request(inputStream);
+                request.parse();
+
+                Response response = new Response(outputStream);
+                response.setRequest(request);
+                response.sendStaticResource();
+
+                socket.close();
+                shutdown = request.getUri().equals(SHUT_DOWN);
 
             } catch (Exception e){
                 e.printStackTrace();
