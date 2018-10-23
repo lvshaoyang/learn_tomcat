@@ -39,7 +39,7 @@ public class Request {
         }
 
         for(int j = 0; j < i; j++){
-            System.out.println("this is buffer[j] --" + buffer[j]);
+            System.out.println("this is buffer[j] --" + buffer[j]);//字节里是数字
             request.append((char)buffer[j]);
         }
 
