@@ -28,6 +28,12 @@ public class Response {
             if(file.exists()){
                 outputStream.write(SUCCESS_MESSAGE.getBytes());
                 fileInputStream = new FileInputStream(file);
+//                BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+//                DataInputStream dataInputStream  = new DataInputStream(bufferedInputStream);
+//                使用处理流，想着可以输出中文到页面，但是流这一块还是不熟悉啊，周末加强复习一下。
+//                InputStreamReader inputStreamReader = new InputStreamReader(dataInputStream);
+
+//                char[] chars = new char[1024];
                 int ch = fileInputStream.read(bytes,0,BUFFER_SIZE);
                 while (ch != -1){
                     outputStream.write(bytes,0,ch);
