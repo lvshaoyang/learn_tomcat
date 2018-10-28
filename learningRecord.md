@@ -18,3 +18,10 @@ URI通常是相对服务器的根目录解释，因此，始终以斜线开头
 ```
 要使用javaEE的servlet包，就算是要构造tomcat也要使用。其实tomcat已经引入 了jsｐ和ｓervlet的相关包了。这应该就是javaEE是怎么用了。
 只是提供了一个类似javaee的jar包了吧。
+```
+2018年10月27日6:41:53   chapter2
+```
+servlet有5个方法，其中init,service,destory是servlet的生命周期方法，在servlet类已经初始化后,init方法将被调用，servlet容器只调用一次，
+以此表明servlet已经被加载进服务中，此方法可以重写用来执行那些只要执行一次的代码，例如加载数据库驱动，值初始化等。
+
+
