@@ -6,7 +6,6 @@ import java.io.*;
 import java.util.Locale;
 
 /**
- * @author lvsy
  * @date 2018/10/28 22:37
  */
 public class Response implements ServletResponse {

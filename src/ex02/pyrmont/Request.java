@@ -10,7 +10,6 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * @author lvsy
  * @date 2018/10/28 22:18
  */
 public class Request implements ServletRequest {
