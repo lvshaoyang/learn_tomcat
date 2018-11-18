@@ -27,7 +27,7 @@ public class Response implements ServletResponse {
         FileInputStream fileInputStream = null;
 
         try {
-            File file = new File(Constants.WEB_ROOT + request.getUri());
+            File file = new File(Constants.WEB_ROOT  + File.separator + "webroot" + request.getUri());
             fileInputStream = new FileInputStream(file);
 
             int ch = fileInputStream.read(bytes,0,BUFFER_SIZE);
